@@ -137,23 +137,24 @@ void jumlah_iterasi(char **arr, char **future, int N)
 void end_of_generation(char **arr,char **future)
 {
     char temp;
-	nextGeneration(MultiArray, nextArray);
-    showArray(nextArray);
+	nextGeneration(arr, future);
+    showArray(future);
     system("cls");
     delay(0.25);
-    while (lanjut_iterasi(MultiArray,nextArray) == 0)
+    while (lanjut_iterasi(arr,future) == 0)
     {
         for(int b = 0; b<rows_game; b++){
             for(int k = 0; k<cols_game; k++){
-                temp = MultiArray[b][k];
-                MultiArray[b][k] = nextArray[b][k];
-                nextArray[b][k] = temp;
+                temp = arr[b][k];
+                arr[b][k] = future[b][k];
+                future[b][k] = temp;
             };
         };
-        nextGeneration(MultiArray, nextArray);
-        showArray(nextArray);
+        nextGeneration(arr, future);
+        showArray(future);
         system("cls");
         delay(0.25);
     };
-    showArray(MultiArray);
+    showArray(arr);
 };
+
