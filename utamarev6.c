@@ -112,25 +112,7 @@ int main()
 			else if(pilihan == 3)
 			{
                 system("cls");
-				nextGeneration(MultiArray, nextArray);
-                showArray(nextArray);
-                system("cls");
-                delay(0.25);
-                while (lanjut_iterasi(MultiArray,nextArray) == 0)
-                {
-                    for(int b = 0; b<rows_game; b++){
-                        for(int k = 0; k<cols_game; k++){
-                            temp = MultiArray[b][k];
-                            MultiArray[b][k] = nextArray[b][k];
-                            nextArray[b][k] = temp;
-                        };
-                    };
-                    nextGeneration(MultiArray, nextArray);
-                    showArray(nextArray);
-                    system("cls");
-                    delay(0.25);
-                };
-                showArray(MultiArray);
+		end_of_generation(MultiArray,nextArray);
 			}
 			else
 			{
